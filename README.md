@@ -4,11 +4,12 @@ Created by: Seehyun Park
 Creation date: 01 Jan 2023  
 https://cesp.inserm.fr/en/equipe/exposome-and-heredity  
 
-#### !! Private repository !!
 
-## Here we are provided a tutorial to provide two sample mendelian randomization (MR) using the TwoSampleMR R Package 
+## Here we provide a tutorial to perform the **standardize** the GWAS summary statistics and **harmonize** the two GWAS summary statistics using Harmonize python package. 
+
 ## Contents
-- [Notes](#notes)
+- [Note](#notes)
+- [Purpose](#purpose)
 - [What is Mendelian Randomization?](#theory)
 - [Data preparation](#dataprepa)
   - [Exposures file](#expo)
@@ -25,14 +26,15 @@ https://cesp.inserm.fr/en/equipe/exposome-and-heredity
   - [MR Plots](#plots)
     
         
-
 ## <a id="notes" /> Notes
+The use of external Summary Statistics in genome-wide association study (GWAS) can significantly increase the size and diversity of the sample, increasing the power to detect association analysis. However, due to batch effects, genotyping errors, and the use of different genotyping platforms, the aggregation of multiple GWAS summary statistics can be quite challenging and difficult. If these GWAS summary statistics are not carefully quality controlled, the incorrect results might be derived when performing meta-analysis. 
 
-To illustrate how to perform two sample MR, we will reproduce the analysis realized in the article [Mendelian randomisation study of smoking, alcohol and coffee drinking in relation to Parkinson's disease](https://pubmed-ncbi-nlm-nih-gov.proxy.insermbiblio.inist.fr/34633332/).
 
-In this script, we use the TwoSampleMR R package. Please check this site to have more details: https://mrcieu.github.io/TwoSampleMR/
+## <a id="purpose" /> Purpose
+The purpose of this package is to provide the data harmonization pipeline that allows users check the quality of GWAS summary statistics before performing a meta-analysis. 
 
-For more information on this script, please contact cloe.domenighetti@inserm.fr
+
+For more information on this script, please contact seehyun.park@inserm.fr
 
 ## <a id="theory" /> What is Mendelian Randomization?
 
