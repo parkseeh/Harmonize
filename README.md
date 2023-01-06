@@ -18,12 +18,12 @@ The use of external Summary Statistics in genome-wide association study (GWAS) c
 The purpose of this package is to provide the data harmonization pipeline that allows users to check the quality of GWAS summary statistics before performing a meta-analysis. 
 
 ## Steps
-**Standardize** 
+### Standardize
 The standardize module scans throught the GWAS summary statistics and remove the SNPs according to the following criteria
-- Null: Null or NA values are genotyped on one of the beta, effect allele frequency or p-value
-- Weird: Genotyped are not based on the combination of 'ATCG'
-- Duplicate: The same SNP is expressed in duplication
-- Palindromic: The palindromic SNP, such that the alleles on the forward strand are the same as on the reverse strand (A/T on forward is T/A on the reverse). However 
+- **Null:** Null or NA values are genotyped on one of the beta, effect allele frequency or p-value
+- **Weird:** Genotyped are not based on the combination of 'ATCG'
+- **Duplicate:** The same SNP is expressed in duplication
+- **Palindromic:** The palindromic SNP, such that the alleles on the forward strand are the same as on the reverse strand (A/T on forward is T/A on the reverse). However 
 
 
 
