@@ -157,7 +157,9 @@ class Standardize:
 
                 ChrPosDuplicated = self.checkChrPosDuplicated(chrName=self.columnInfoDict['Chromosome'], posName=self.columnInfoDict['Position'])
 
+                # make result dictionary
                 resultDict = defaultdict(list)
+                # Define column name for each file
                 resultDict['standardized'].append([self.columnInfoDict['SNP'],
                                                    self.columnInfoDict['Chromosome'],
                                                    self.columnInfoDict['Position'],
@@ -168,6 +170,26 @@ class Standardize:
                                                    self.columnInfoDict['SD'],
                                                    self.columnInfoDict['p-value'],
                                                    'MAF'])
+                resultDict['palindromic'].append([self.columnInfoDict['SNP'],
+                                                  self.columnInfoDict['Chromosome'],
+                                                  self.columnInfoDict['Position'],
+                                                  self.columnInfoDict['nonEffectAllele'],
+                                                  self.columnInfoDict['EffectAllele'],
+                                                  self.columnInfoDict['EAF'],
+                                                  self.columnInfoDict['Beta'],
+                                                  self.columnInfoDict['SD'],
+                                                  self.columnInfoDict['p-value'],
+                                                  'MAF'])
+                resultDict['weird'].append([self.columnInfoDict['SNP'],
+                                            self.columnInfoDict['Chromosome'],
+                                            self.columnInfoDict['Position'],
+                                            self.columnInfoDict['nonEffectAllele'],
+                                            self.columnInfoDict['EffectAllele']])
+                resultDict['duplicated'].append([self.columnInfoDict['SNP'],
+                                                 self.columnInfoDict['Chromosome'],
+                                                 self.columnInfoDict['Position'],
+                                                 self.columnInfoDict['nonEffectAllele'],
+                                                 self.columnInfoDict['EffectAllele']])
 
                 for line in lines:
                     line = line.strip().split('\t')
@@ -284,22 +306,22 @@ class Standardize:
 if __name__ == "__main__":
 
     # Define the directory where input file is located
-    inputFile = '/home2/users/park/python_projects/harmonize/SummStat_EPIC_EUR_whole_all_M.txt'
+    inputFile = '/home2/users/park/python_projects/harmonize/test/GWAS_Thyr_Eur_CtrlsSafe_DTC_chrALL.txt'
 
     # Define the column name in your own GWAS Summary Statistics
     # User needs to modify the 'value' part of the columnInfoDict
-    columnInfoDict = {'SNP': 'SNP',
-                      'Chromosome': 'chr',
-                      'Position': 'pos',
-                      'nonEffectAllele': 'A1',
-                      'EffectAllele': 'A2',
-                      'EAF': 'freq2',
-                      'Beta': 'beta',
-                      'SD': 'sd',
-                      'p-value': 'p'}
+    columnInfoDict = {'SNP': 'ID',
+                      'Chromosome': '#CHROM',
+                      'Position': 'POS',
+                      'nonEffectAllele': 'ALT',
+                      'EffectAllele': 'REF',
+                      'EAF': 'A1_FREQ',
+                      'Beta': 'BETA',
+                      'SD': 'SE',
+                      'p-value': 'P'}
 
     # Define the output directory where you want to save the result.
-    outputDir = '/home2/users/park/python_projects/harmonize/EPIC'
+    outputDir = '/home2/users/park/python_projects/harmonize/test/UKBB'
 
     # Users can set up the palindromic threshold value.
     # Allow palindromic allele when their EAF is below than palindromic Threshold
