@@ -1,11 +1,13 @@
 # Harmonize
 
 Created by: Seehyun Park
+
 Creation date: 01 Jan 2023  
+
 https://cesp.inserm.fr/en/equipe/exposome-and-heredity  
 
 
-## Tutorial to perform the Harmonization of GWAS summary statistics 
+## A tutorial for performing harmonization of GWAS summary statistics 
 
 ## Contents
 - [Note](#notes)
