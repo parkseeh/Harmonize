@@ -5,7 +5,7 @@ Creation date: 01 Jan 2023
 https://cesp.inserm.fr/en/equipe/exposome-and-heredity  
 
 
-## Here we provide a tutorial to perform the **standardize** the GWAS summary statistics and **harmonize** the two GWAS summary statistics using Harmonize python package. 
+## Tutorial to perform the Harmonization of GWAS summary statistics 
 
 ## Contents
 - [Note](#notes)
