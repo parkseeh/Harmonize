@@ -306,7 +306,7 @@ class Standardize:
 if __name__ == "__main__":
 
     # Define the directory where input file is located
-    inputFile = '/home2/users/park/python_projects/harmonize/test/GWAS_Thyr_Eur_CtrlsSafe_DTC_chrALL.txt'
+    fileName = '/home2/users/park/python_projects/harmonize/test/GWAS_Thyr_Eur_CtrlsSafe_DTC_chrALL.txt'
 
     # Define the column name in your own GWAS Summary Statistics
     # User needs to modify the 'value' part of the columnInfoDict
@@ -329,7 +329,7 @@ if __name__ == "__main__":
     palindromicThreshold = 0.3
 
     # Create your own object using `Standardize`
-    test = Standardize(fileName=inputFile,
+    test = Standardize(fileName=fileName,
                        columnInfoDict=columnInfoDict,
                        palindromicThreshold=palindromicThreshold,
                        verbose=True)
