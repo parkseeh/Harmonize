@@ -12,44 +12,28 @@ https://cesp.inserm.fr/en/equipe/exposome-and-heredity
 ## Contents
 - [Note](#notes)
 - [Purpose](#purpose)
-- [What is Mendelian Randomization?](#theory)
-- [Data preparation](#dataprepa)
-  - [Exposures file](#expo)
-    - [Clump the data](#clump)
-    - [Make the beta of the exposure positive](#beta)
-    - [Looking for proxies?](#prox)
-  - [Outcome file](#outcome)
-- [Performing Two Sample MR](#2sampleMR)
-  - [Functions definition](#fun)
-  - [Main analyses](#mainMR) 
-  - [Stratified analyses and interaction](#stratMR)
-  - [Other robust methods](#robust)
-  - [Reverse MR](#reverse)
-  - [MR Plots](#plots)
-    
+- [Steps](#steps)
+
         
 ## <a id="notes" /> Notes
 The use of external Summary Statistics in genome-wide association study (GWAS) can significantly increase the size and diversity of the sample, increasing the power to detect association analysis. However, due to batch effects, genotyping errors, and the use of different genotyping platforms, the aggregation of multiple GWAS summary statistics can be quite challenging and difficult. If these GWAS summary statistics are not carefully quality controlled, the incorrect results might be derived when performing meta-analysis. 
 
 
 ## <a id="purpose" /> Purpose
-The purpose of this package is to provide the data harmonization pipeline that allows users check the quality of GWAS summary statistics before performing a meta-analysis. 
+The purpose of this package is to provide the data harmonization pipeline that allows users to check the quality of GWAS summary statistics before performing a meta-analysis. 
+
+## <a id="steps" /> Steps
+**Standardize** 
+The standardize module scans throught the GWAS summary statistics and remove the SNPs according to the following criteria
+- Null: Null or NA values are genotyped on one of the beta, effect allele frequency or p-value
+- Weird: Genotyped are not based on the combination of 'ATCG'
+- Duplicate: The same SNP is expressed in duplication
+- Palindromic: The palindromic SNP, such that the alleles on the forward strand are the same as on the reverse strand (A/T on forward is T/A on the reverse). However 
 
 
-For more information on this script, please contact seehyun.park@inserm.fr
 
-## <a id="theory" /> What is Mendelian Randomization?
 
-The principal issue in traditional epidemiology is the difference between correlation and causality. It is not ethical to voluntarily expose individuals to a potential pathogenic agent. The level of evidence of the results depends on different factors. 
-In this context, the Mendelian Randomization (MR) method was developped, by mixing genetic and traditional epidemiology, to provide arguments for improving causal inference on the relationship beween an oberved environmental factor and a disease thanks to genetic variants. 
 
-**Design of the study:** 
-
-MR uses exposure-associated genetic variants, most often SNPs (single nucleotide polymorphism) as IVs in order to estimate the causal effect of that exposure on a disease or trait of interest.
-For these SNPs to be valid, three main assumptions must be verified:
-- IV1: Variants must be associated with the exposure (strong association)  
-- IV2: Variants must not be associated with the disease of interest except through the studied exposure
-- IV3: Variants must not ve associated with unmeasured confounders of the relation between the exposure and the disease, i.e., no horizontal pleiotropy.
 
 ![Image4](https://user-images.githubusercontent.com/60399683/208106098-36278287-dc55-47a4-adc5-5542a5ca00f6.png)
 
