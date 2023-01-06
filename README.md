@@ -9,20 +9,15 @@ https://cesp.inserm.fr/en/equipe/exposome-and-heredity
 
 ## A tutorial for performing harmonization of GWAS summary statistics 
 
-## Contents
-- [Note](#notes)
-- [Purpose](#purpose)
-- [Steps](#steps)
-
         
-## <a id="notes" /> Notes
+## Notes
 The use of external Summary Statistics in genome-wide association study (GWAS) can significantly increase the size and diversity of the sample, increasing the power to detect association analysis. However, due to batch effects, genotyping errors, and the use of different genotyping platforms, the aggregation of multiple GWAS summary statistics can be quite challenging and difficult. If these GWAS summary statistics are not carefully quality controlled, the incorrect results might be derived when performing meta-analysis. 
 
 
-## <a id="purpose" /> Purpose
+## Purpose
 The purpose of this package is to provide the data harmonization pipeline that allows users to check the quality of GWAS summary statistics before performing a meta-analysis. 
 
-## <a id="steps" /> Steps
+## Steps
 **Standardize** 
 The standardize module scans throught the GWAS summary statistics and remove the SNPs according to the following criteria
 - Null: Null or NA values are genotyped on one of the beta, effect allele frequency or p-value
